@@ -1,0 +1,25 @@
+body { background: #f6f4f0; }
+
+.nav { padding: 0 10px 0; }
+.dropdown { margin: 5px 10px 5px 5px; }
+.nav-item { margin: 5px 0 0; }
+.input-search { margin: 5px 0 0 50px; }
+.btn-search { margin: 3px 0 0 10px; }
+
+.content { padding: 0 10px 10px; }
+.card { margin-top: 10px; }
+
+.img-thumb { height: 180px; }
+.img-original { height: 400px; }
+
+.form-select { margin: 10px 0 0; }
+.col-auto {
+    display: flex;
+    flex-direction: row;
+}
+.search__h3 {
+    margin: 20px 0 20px;
+    text-align: center;
+}
+.search__h4 { margin-left: 20px; }
+
