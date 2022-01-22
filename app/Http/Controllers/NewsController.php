@@ -12,13 +12,12 @@ class NewsController extends Controller
     // если куки не найдены, устанавливаем город по умолчанию
     public function isCookie()
     {
-        if (!Cookie::get('city')) return redirect()->route('changeCity');
+        if (is_null(Cookie::get('city'))) Cookie::queue('city', 'moscow', time() + 86400);
     }
 
     // смена города в куках
     public function changeCity()
     {
-        $this->isCookie();
         if (Cookie::get('city') == 'moscow') Cookie::queue('city', 'nalchik', time() + 86400);
         if (Cookie::get('city') == 'nalchik') Cookie::queue('city', 'moscow', time() + 86400);
 

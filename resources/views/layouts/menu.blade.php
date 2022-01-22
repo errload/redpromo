@@ -6,7 +6,7 @@
 
     <li class="nav-item">
         <div class="dropdown">
-            @if(\Illuminate\Support\Facades\Cookie::get('city') == 'moscow')
+            @if(is_null(\Illuminate\Support\Facades\Cookie::get('city')) || \Illuminate\Support\Facades\Cookie::get('city') == 'moscow')
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Москва
                 </button>
@@ -30,7 +30,7 @@
 
     <li class="nav-item">
         <a class="nav-link {{ $active == 'favorites' ? 'active' : '' }}"
-           href="{{ route('favorites', \Illuminate\Support\Facades\Cookie::get('city')) }}">Избранные</a>
+           href="{{ route('favorites', \Illuminate\Support\Facades\Cookie::get('city') ?: 'moscow') }}">Избранные</a>
     </li>
 
     <li class="nav-item">
